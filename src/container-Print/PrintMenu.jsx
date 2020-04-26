@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import pinterest from '../assets/pinterest.svg';
-// import { Link } from 'react-router-dom';
-const Menu = ({
+
+const PrintMenu = ({
   GetData, query, handleChange, handleQuery,
 }) => (
   <section>
-    <header className="nav-header">
+    <header className="header">
       <li className="logo-pinterest">
         <img src={pinterest} alt="logo" className="logo" />
       </li>
@@ -35,7 +36,7 @@ const Menu = ({
           />
         </form>
       </div>
-      {/* <nav className="category">
+      {/* <nav className="nav-category">
         <button
           type="button"
           onClick={(event) => {
@@ -74,4 +75,11 @@ const Menu = ({
     </header>
   </section>
 );
-export default Menu;
+PrintMenu.propTypes = {
+  GetData: PropTypes.func.isRequired,
+  query: PropTypes.func.isRequired,
+  handleQuery: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
+
+export default PrintMenu;
