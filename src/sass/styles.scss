@@ -1,1 +1,10 @@
-@import 'container/home';
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+}
+@import "container/home";
+@import "container/PrintMenu";

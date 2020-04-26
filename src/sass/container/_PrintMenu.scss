@@ -1,0 +1,42 @@
+$color-Icon: #a3a3a3;
+$color-Font: rgb(225, 225, 225);
+.logo {
+  width: 35px;
+}
+.logo-pinterest,
+.start {
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 10px;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: 24px;
+  border: none;
+  &:hover {
+    border-radius: 35%;
+  }
+}
+.inputSearch {
+  background-image: url(../assets/lupa.png);
+  background-color: $color-Font;
+  background-color: $color-Font;
+  background-size: 1.6%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-x: 1.6%;
+  border-color: $color-Font;
+  width: 1000px;
+  height: 43px;
+  padding: 0px 0px 0px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: 20px;
+  &::placeholder {
+    font-size: 15px;
+    padding: 10px;;
+  }
+}

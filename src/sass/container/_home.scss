@@ -1,0 +1,21 @@
+.containerImages {
+  padding-top: 5rem;
+  flex-flow: column wrap;
+  flex-wrap: wrap;
+  align-content: center;
+  column-count: 4;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.itemImage {
+  border-radius: 6%;
+  width: 18.5%;
+  margin: 6px;
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 0.5em;
+  width: 100%;
+}

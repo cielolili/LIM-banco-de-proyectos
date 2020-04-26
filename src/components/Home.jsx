@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import ItemImages from '../container-Print/ItemImages';
+import PrintMenu from '../container-Print/PrintMenu';
+import '../css/styles.css';
 
 const Home = () => {
   const [query, setQuery] = useState('');
   const [result, setResult] = useState([]);
-  const clientId = 't9y3MmVIo9_idKGGiynTPnDh_Za7L0KMl6kz82eFy8c';
+  const clientId = 'kwcGvKin0pLHWk6_pLuUKQpqiQMXN26K5hFoURVGHZM';
   const endPoint = 'https://api.unsplash.com/search/photos';
-  const url3 = `${endPoint}?query=$${query}&per_page=30&client_id=${clientId}`;
+  const url = `${endPoint}?query=$${query}&per_page=20&client_id=${clientId}`;
 
   // input
   function handleChange(event) {
@@ -15,7 +16,9 @@ const Home = () => {
   }
   // botones
   function GetData() {
-    fetch(url3).then((response) => response.json()).then((jsonResponse) => {
+    fetch(url, {
+      method: 'GET',
+    }).then((response) => response.json()).then((jsonResponse) => {
       console.log(jsonResponse);
       setResult(jsonResponse.results);
     }).catch((error) => console.log(`Error al realizar la petición:${error.message}`));
@@ -29,19 +32,22 @@ const Home = () => {
     setQuery(tipo);
   };
 
-  let component;
+  /* let component;
   if (query) {
     component = result.map((element) => <ItemImages key={element.id} data={element.urls.small} />);
   } else {
     component = result
-      .map((element) => <img alt="photos" src={element.urls.small} key={element.id} />);
-  }
+      .map((element) => <img alt="photos" src={element.urls.small} key={element.id} className="card-image" />);
+  } */
+  const PrintData = () => result.map((element) => (
+    <img className="itemImage" src={element.urls.small} key={element.id} alt="images" />
+  ));
   return (
 
-    <div>
+    <div className="masonry">
+      <PrintMenu GetData={GetData} handleChange={handleChange} handleQuery={handleQuery} query={query} />
 
-      <h1>Pinterest</h1>
-      <button
+      {/* <button
         onClick={(event) => {
           event.preventDefault();
           GetData();
@@ -75,8 +81,19 @@ const Home = () => {
       >
         Books
       </button>
-      <div>
-        {component}
+      <button
+        type="button"
+        onClick={(event) => {
+          event.preventDefault();
+          handleQuery('Card');
+        }}
+
+        value="Card"
+      >
+        Card
+      </button> */}
+      <div className="containerImages">
+        {PrintData()}
       </div>
     </div>
   );
