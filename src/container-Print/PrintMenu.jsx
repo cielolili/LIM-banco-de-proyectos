@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import pinterest from '../assets/pinterest.svg';
 
 const PrintMenu = ({
-  GetData, query, handleChange, handleQuery,
+  handleQuery, Search,
 }) => (
   <section>
     <header className="header">
       <li className="logo-pinterest">
         <img src={pinterest} alt="logo" className="logo" />
-      </li>
 
+      </li>
       <button
         className="start btn btn-outline-dark"
         type="button"
@@ -22,64 +22,57 @@ const PrintMenu = ({
         Inicio
       </button>
       <div className="searchImages">
-        <form onSubmit={(event) => {
-          event.preventDefault();
-          GetData();
-        }}
-        >
+        <form onSubmit={Search}>
           <input
+            className="inputSearch"
+            onChange={handleQuery}
             type="text"
             placeholder="Buscar imágenes"
-            className="inputSearch"
-            value={query}
-            onChange={handleChange}
           />
         </form>
       </div>
       {/* <nav className="nav-category">
-        <button
-          type="button"
-          onClick={(event) => {
-            event.preventDefault();
-            handleQuery('Mickey');
-          }}
+      <button
+        type="button"
+        onClick={(event) => {
+          event.preventDefault();
+          handleQuery('Mickey');
+        }}
 
-          value="Mickey"
-        >
-          Mickey
-        </button>
-        <button
-          type="button"
-          onClick={(event) => {
-            event.preventDefault();
-            handleQuery('Books');
-          }}
+        value="Mickey"
+      >
+        Mickey
+      </button>
+      <button
+        type="button"
+        onClick={(event) => {
+          event.preventDefault();
+          handleQuery('Books');
+        }}
 
-          value="Books"
-        >
-          Books
-        </button>
-        <button
-          type="button"
-          onClick={(event) => {
-            event.preventDefault();
-            handleQuery('Card');
-          }}
+        value="Books"
+      >
+        Books
+      </button>
+      <button
+        type="button"
+        onClick={(event) => {
+          event.preventDefault();
+          handleQuery('Card');
+        }}
 
-          value="Card"
-        >
-          Card
-        </button>
-      </nav> */}
+        value="Card"
+      >
+        Card
+      </button>
+    </nav> */}
 
     </header>
   </section>
 );
 PrintMenu.propTypes = {
-  GetData: PropTypes.func.isRequired,
-  query: PropTypes.func.isRequired,
   handleQuery: PropTypes.func.isRequired,
-  handleChange: PropTypes.func.isRequired,
+  Search: PropTypes.func.isRequired,
 };
 
 export default PrintMenu;

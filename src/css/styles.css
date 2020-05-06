@@ -73,5 +73,32 @@ body {
   font-size: 15px;
   padding: 10px;
 }
-
+.contenedor{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.caja{
+  border: 1px solid black;
+  padding: 15px;
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.animado{
+  opacity: 0;
+  transition: all 0.5s;
+}
+.contenedor{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.caja{
+  border: 1px solid black;
+  padding: 15px;
+  width: 360px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 /*# sourceMappingURL=styles.css.map */
