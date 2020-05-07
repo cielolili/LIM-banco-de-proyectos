@@ -30,9 +30,11 @@ function Home() {
       .catch((error) => console.log(`Error al realizar la petición:${error.message}`));
   };
   const moreImages = () => {
-    setPage(page + 1);
-    MoreImages(page, query).then((jsonResponse) => (setResult(result.concat(jsonResponse.results))))
-      .catch((error) => console.log(`Error al realizar la petición:${error.message}`));
+    setTimeout(() => {
+      setPage(page + 1);
+      MoreImages(page, query).then((jsonResponse) => (setResult(result.concat(jsonResponse.results))))
+        .catch((error) => console.log(`Error al realizar la petición:${error.message}`));
+    }, 1000);
   };
 
   const PrintData = () => result.map((element) => (
