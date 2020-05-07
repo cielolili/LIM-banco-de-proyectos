@@ -22,7 +22,11 @@ const PrintMenu = ({
         Inicio
       </button>
       <div className="searchImages">
-        <form onSubmit={Search}>
+        <form onSubmit={(event) => {
+          event.preventDefault();
+          Search();
+        }}
+        >
           <input
             className="inputSearch"
             onChange={handleQuery}

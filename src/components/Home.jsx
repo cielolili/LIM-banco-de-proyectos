@@ -3,7 +3,8 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import PrintMenu from '../container-Print/PrintMenu';
 import '../css/styles.css';
 // import GetData from '../controllerAPI/GetData';
-// import SearchData from '../controllerAPI/Search';
+import SearchData from '../controllerAPI/Search';
+
 const clientId = 'kwcGvKin0pLHWk6_pLuUKQpqiQMXN26K5hFoURVGHZM ';
 const endPoint = 'https://api.unsplash.com/search/photos';
 
@@ -23,13 +24,9 @@ function Home() {
       });
   }, []);
 
-  const searchImages = (event) => {
-    event.preventDefault();
-    fetch(`${endPoint}?&per_page=20&query=${query}&client_id=${clientId}`)
-      .then((response) => response.json()).then((jsonResponse) => {
-        console.log(jsonResponse);
-        setResult(jsonResponse.results);
-      }).catch((error) => console.log(`Error al realizar la petición:${error.message}`));
+  const searchImages = () => {
+    SearchData(query).then((jsonResponse) => (setResult(jsonResponse.results)))
+      .catch((error) => console.log(`Error al realizar la petición:${error.message}`));
   };
 
   const moreImages = () => {
@@ -45,7 +42,6 @@ function Home() {
     <img className="itemImage" src={element.urls.small} key={element.id} alt="images" />
   ));
 
-  console.log(result);
   return (
     <div className="masonry">
       <PrintMenu Search={searchImages} handleQuery={handleQuery} query={query} />
