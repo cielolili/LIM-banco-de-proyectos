@@ -3,7 +3,8 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import PrintMenu from '../container-Print/PrintMenu';
 import '../css/styles.css';
 // import GetData from '../controllerAPI/GetData';
-import SearchData from '../controllerAPI/Search';
+import MoreImages from '../controllerAPI/MoreImages';
+import SearchData from '../controllerAPI/SearchData';
 
 const clientId = 'kwcGvKin0pLHWk6_pLuUKQpqiQMXN26K5hFoURVGHZM ';
 const endPoint = 'https://api.unsplash.com/search/photos';
@@ -28,14 +29,10 @@ function Home() {
     SearchData(query).then((jsonResponse) => (setResult(jsonResponse.results)))
       .catch((error) => console.log(`Error al realizar la petición:${error.message}`));
   };
-
   const moreImages = () => {
     setPage(page + 1);
-    fetch(`${endPoint}?&per_page=20&page=${page}&query=${query}&client_id=${clientId}`)
-      .then((response) => response.json()).then((jsonResponse) => {
-        console.log(jsonResponse);
-        setResult(result.concat(jsonResponse.results));
-      }, []);
+    MoreImages(page, query).then((jsonResponse) => (setResult(result.concat(jsonResponse.results))))
+      .catch((error) => console.log(`Error al realizar la petición:${error.message}`));
   };
 
   const PrintData = () => result.map((element) => (
