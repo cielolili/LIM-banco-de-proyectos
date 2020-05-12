@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { Button, Modal } from 'react-bootstrap';
+
 import PrintMenu from '../container-Print/PrintMenu';
+import ModalPrint from '../container-Print/ModalPrint';
+
 import '../css/styles.css';
 // import GetData from '../controllerAPI/GetData';
 import MoreImages from '../controllerAPI/MoreImages';
@@ -36,11 +40,12 @@ function Home() {
         .catch((error) => console.log(`Error al realizar la petición:${error.message}`));
     }, 1000);
   };
-
   const PrintData = () => result.map((element) => (
-    <img className="itemImage" src={element.urls.small} key={element.id} alt="images" />
+    <ModalPrint
+      img={element.urls.thumb}
+      key={element.id}
+    />
   ));
-
   return (
     <div className="masonry">
       <PrintMenu Search={searchImages} handleQuery={handleQuery} query={query} />
@@ -49,6 +54,20 @@ function Home() {
           dataLength={result.length}
           hasMore
           next={moreImages}
+          loader={(
+            <div className="loading">
+              <div className="loading-text">
+                <span className="loading-text-words">L</span>
+                <span className="loading-text-words">O</span>
+                <span className="loading-text-words">A</span>
+                <span className="loading-text-words">D</span>
+                <span className="loading-text-words">I</span>
+                <span className="loading-text-words">N</span>
+                <span className="loading-text-words">G</span>
+              </div>
+            </div>
+)}
+
         >
           {PrintData()}
         </InfiniteScroll>
