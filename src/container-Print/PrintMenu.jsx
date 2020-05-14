@@ -31,7 +31,7 @@ const PrintMenu = ({
             className="inputSearch"
             onChange={handleQuery}
             type="text"
-            placeholder="Buscar imágenes"
+            placeholder="Search images"
           />
         </form>
       </div>

@@ -1,0 +1,47 @@
+$color-Font: rgb(225, 225, 225);
+$color-Icon: #a3a3a3;
+
+.description{
+  font-size: 20px;
+}
+.closeButton {
+  background-color: $color-Font;
+  color: $color-Icon;
+}
+.buttonSave{
+  float: right;
+  position: absolute;
+  margin-left: 2%;
+}
+.itemImageModal {
+  float: left;
+  width: 10%;
+  margin: 4px;
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 0.5em;
+  width: 50%;
+}
+.profileUser {
+  width: 10%;
+  height: 10%;
+  border-radius: 140px;
+  justify-content: center;
+  margin-left: 10px;
+  float: left;
+}
+.NameUser {
+  width: 10%;
+  margin-right: 120px;
+  float: right;
+}
+.likes {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  float: left;
+}
+.Textlikes{
+ margin-top: 85px;
+ font-size: 15px;
+}

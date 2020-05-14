@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { Button, Modal } from 'react-bootstrap';
-
 import PrintMenu from '../container-Print/PrintMenu';
 import ModalPrint from '../container-Print/ModalPrint';
 
@@ -43,6 +41,11 @@ function Home() {
   const PrintData = () => result.map((element) => (
     <ModalPrint
       img={element.urls.thumb}
+      profileUser={element.user.profile_image.small}
+      name={element.user.name}
+      likes={element.user.total_likes}
+      description={element.alt_description}
+      download={element.links.download}
       key={element.id}
     />
   ));
