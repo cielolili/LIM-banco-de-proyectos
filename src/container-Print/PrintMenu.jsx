@@ -5,7 +5,7 @@ import pinterest from '../assets/pinterest.svg';
 const PrintMenu = ({
   handleQuery, Search,
 }) => (
-  <section>
+  <section data-testid="menu">
     <header className="header">
       <li className="logo-pinterest">
         <img src={pinterest} alt="logo" className="logo" />
@@ -14,18 +14,20 @@ const PrintMenu = ({
       <button
         className="start btn btn-outline-dark"
         type="button"
-        onClick={(event) => {
-          event.preventDefault();
-          handleQuery('');
-        }}
+        // onClick={(event) => {
+        //   event.preventDefault();
+        //   handleQuery('');
+        // }}
       >
         Inicio
       </button>
       <div className="searchImages">
-        <form onSubmit={(event) => {
-          event.preventDefault();
-          Search();
-        }}
+        <form
+          data-testid="formSearch"
+          onSubmit={(event) => {
+            event.preventDefault();
+            Search();
+          }}
         >
           <input
             className="inputSearch"
@@ -35,42 +37,6 @@ const PrintMenu = ({
           />
         </form>
       </div>
-      {/* <nav className="nav-category">
-      <button
-        type="button"
-        onClick={(event) => {
-          event.preventDefault();
-          handleQuery('Mickey');
-        }}
-
-        value="Mickey"
-      >
-        Mickey
-      </button>
-      <button
-        type="button"
-        onClick={(event) => {
-          event.preventDefault();
-          handleQuery('Books');
-        }}
-
-        value="Books"
-      >
-        Books
-      </button>
-      <button
-        type="button"
-        onClick={(event) => {
-          event.preventDefault();
-          handleQuery('Card');
-        }}
-
-        value="Card"
-      >
-        Card
-      </button>
-    </nav> */}
-
     </header>
   </section>
 );

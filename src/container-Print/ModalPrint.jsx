@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
 import like from '../assets/like.svg';
 
@@ -10,10 +11,10 @@ function ModalPrint({
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   return (
     <section>
       <input
+        data-testid="input"
         type="image"
         variant="primary"
         onClick={handleShow}
@@ -21,37 +22,50 @@ function ModalPrint({
         className="itemImage"
         alt="photos"
       />
+      <div data-testid="modal">
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title className="description">
-            {description}
-            <Button variant="danger" href={download} className="buttonSave">Save</Button>
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img src={img} alt="photos" className="itemImageModal" />
-          <img src={profileUser} alt="photos" className="profileUser" />
-          <p className="NameUser">
-            {name}
-          </p>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title className="description">
+              {description}
+            </Modal.Title>
+            {/* <a className="buttonSave">Save</a> */}
+            <a className="btn btn-danger buttonSave" href={download}>
+              Save
+            </a>
 
-          <p className="Textlikes">
-            <img src={like} alt="total-likes" className="likes" />
-            Likes:
-            {' '}
+          </Modal.Header>
+          <Modal.Body>
+            <img src={img} alt="photos" className="itemImageModal" />
+            <img src={profileUser} alt="photos" className="profileUser" />
+            <p className="NameUser">
+              {name}
+            </p>
+            <p className="Textlikes">
+              <img src={like} alt="total-likes" className="likes" />
+              Likes:
+              {' '}
 
-            { likes }
+              { likes }
 
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose} className="closeButton">
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose} className="closeButton">
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
     </section>
   );
 }
+ModalPrint.propTypes = {
+  img: PropTypes.func.isRequired,
+  description: PropTypes.func.isRequired,
+  profileUser: PropTypes.func.isRequired,
+  name: PropTypes.func.isRequired,
+  likes: PropTypes.func.isRequired,
+  download: PropTypes.func.isRequired,
+};
 export default ModalPrint;

@@ -30,6 +30,12 @@ body {
   margin: 0 0 0.5em;
   width: 100%;
 }
+.itemImage:focus {
+  outline: 0;
+}
+.itemImage:hover {
+  filter: opacity(0.9);
+}
 
 .loading {
   position: fixed;
@@ -129,7 +135,7 @@ body {
   height: 43px;
   padding: 0px 0px 0px 30px;
   border-radius: 30px;
-  border: none;
+  border: 0px;
   font-size: 15px;
   margin-left: 10px;
   margin-top: 20px;
@@ -137,6 +143,9 @@ body {
 .inputSearch::placeholder {
   font-size: 15px;
   padding: 10px;
+}
+.inputSearch:focus {
+  outline: 0;
 }
 
 .description {
@@ -146,12 +155,12 @@ body {
 .closeButton {
   background-color: #e1e1e1;
   color: #a3a3a3;
+  float: left;
 }
 
 .buttonSave {
   float: right;
-  position: absolute;
-  margin-left: 2%;
+  float: right;
 }
 
 .itemImageModal {
@@ -162,6 +171,9 @@ body {
   display: inline-block;
   margin: 0 0 0.5em;
   width: 50%;
+}
+.itemImageModal:focus {
+  outline: 0;
 }
 
 .profileUser {

@@ -21,6 +21,11 @@ $color-backGroundImage: #eee;
   display: inline-block;
   margin: 0 0 0.5em;
   width: 100%;
+  &:focus {
+    outline: 0;
+ }
+ &:hover {filter: opacity(.90);}
+
 }
 
 @mixin position-center($text-align: center) {
