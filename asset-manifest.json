@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/LIM-banco-de-proyectos/static/css/main.675c91d1.chunk.css",
+    "main.js": "/LIM-banco-de-proyectos/static/js/main.108df21c.chunk.js",
+    "main.js.map": "/LIM-banco-de-proyectos/static/js/main.108df21c.chunk.js.map",
+    "runtime-main.js": "/LIM-banco-de-proyectos/static/js/runtime-main.7a83856d.js",
+    "runtime-main.js.map": "/LIM-banco-de-proyectos/static/js/runtime-main.7a83856d.js.map",
+    "static/js/2.edc6b834.chunk.js": "/LIM-banco-de-proyectos/static/js/2.edc6b834.chunk.js",
+    "static/js/2.edc6b834.chunk.js.map": "/LIM-banco-de-proyectos/static/js/2.edc6b834.chunk.js.map",
+    "index.html": "/LIM-banco-de-proyectos/index.html",
+    "precache-manifest.cf5de8d43a4bb1480b104f3790bf9698.js": "/LIM-banco-de-proyectos/precache-manifest.cf5de8d43a4bb1480b104f3790bf9698.js",
+    "service-worker.js": "/LIM-banco-de-proyectos/service-worker.js",
+    "static/css/main.675c91d1.chunk.css.map": "/LIM-banco-de-proyectos/static/css/main.675c91d1.chunk.css.map",
+    "static/js/2.edc6b834.chunk.js.LICENSE.txt": "/LIM-banco-de-proyectos/static/js/2.edc6b834.chunk.js.LICENSE.txt",
+    "static/media/like.svg": "/LIM-banco-de-proyectos/static/media/like.71152490.svg",
+    "static/media/styles.css": "/LIM-banco-de-proyectos/static/media/lupa.4bb59c70.png",
+    "static/media/pinterest.svg": "/LIM-banco-de-proyectos/static/media/pinterest.e73e4fbd.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a83856d.js",
+    "static/js/2.edc6b834.chunk.js",
+    "static/css/main.675c91d1.chunk.css",
+    "static/js/main.108df21c.chunk.js"
+  ]
+}
