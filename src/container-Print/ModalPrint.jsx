@@ -61,11 +61,11 @@ function ModalPrint({
   );
 }
 ModalPrint.propTypes = {
-  img: PropTypes.func.isRequired,
-  description: PropTypes.func.isRequired,
-  profileUser: PropTypes.func.isRequired,
-  name: PropTypes.func.isRequired,
-  likes: PropTypes.func.isRequired,
-  download: PropTypes.func.isRequired,
+  img: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  profileUser: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  likes: PropTypes.number.isRequired,
+  download: PropTypes.string.isRequired,
 };
 export default ModalPrint;

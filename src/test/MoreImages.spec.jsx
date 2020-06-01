@@ -4,7 +4,7 @@ beforeEach(() => {
   fetch.resetMocks();
 });
 describe('MoreImages', () => {
-  it('Debería traerme 20 imágenes adicionales al hacer scrroll', async () => {
+  it('Debería traer 20 imágenes adicionales al hacer scrroll', async () => {
     global.fetch = jest.fn().mockImplementation(() => {
       const data = new Promise((resolve) => {
         resolve({
